@@ -45,8 +45,18 @@ class _QuizPageState extends State<QuizPage> {
       if (quizBrain.isFinished() == true) {
         Alert(
           context: context,
-          title: 'Finished!',
-          desc: 'You\'ve reached the end of the quiz.',
+          title: 'Завершено!',
+          desc: 'Вы закончили викторину!',
+          buttons: [
+            DialogButton(
+              child: const Text(
+                "Назад",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              onPressed: () => Navigator.pop(context),
+              width: 120,
+            )
+          ],
         ).show();
 
         quizBrain.reset();
